@@ -1,0 +1,30 @@
+
+// So I schema is given by supabase as default
+containing
+gmail uuid hasded password name created etc
+
+// create a user table in primsa
+
+user id
+name
+email
+created_at
+updated_at
+subscription_status
+subscription_plan
+subscription_end_date
+
+// forms we are not storing here
+// we will just store the form id and it will be store in dynamo db or mongo db
+user id 1 to many relation with user table
+form_id
+created_at
+updated_at
+total_forms
+limit
+context_limit
+expiry 
+
+
+
+

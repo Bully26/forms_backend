@@ -1,0 +1,27 @@
+// complete in 2 week somw what yeah 
+
+day 1
+
+configuration 
+
+added prisma
+primsa + supabase
+
+building schema
+
+
+day 2
+
+so configure user auth
+simple jwt auth ttl 1 week i guess that would be fine 
+
+implement basic functionality of app then 
+
+assuming user is authenticated 
+create a form 
+generate token for it with some ttl and limits 
+submit forms with that [may be front end]
+
+
+
+
