@@ -4,7 +4,6 @@ import {
   Post,
   Body,
   Patch,
-  Param,
   Delete,
 } from '@nestjs/common';
 import { UserService } from './user.service';
@@ -13,20 +12,25 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
+
+  @Post()
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.userService.create(createUserDto);
+  }
 
   @Get('profile')
   getProfile() {
-    return { message: 'Get current user profile (guarded)' };
+    return this.userService.getProfile();
   }
 
   @Patch('profile')
   updateProfile(@Body() updateUserDto: UpdateUserDto) {
-    return { message: 'Update user profile', data: updateUserDto };
+    return this.userService.updateProfile(updateUserDto);
   }
 
   @Delete('profile')
   deleteProfile() {
-    return { message: 'Schedule user for deletion' };
+    return this.userService.deleteProfile();
   }
 }

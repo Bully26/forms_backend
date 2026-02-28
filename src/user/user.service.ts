@@ -1,26 +1,36 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { prisma } from '../prisma';
+
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+  async create(createUserDto: CreateUserDto) {
+    try {
+      const newUser = await prisma.user.create({
+        data: {
+          name: createUserDto.name,
+          email: createUserDto.email,
+        },
+      });
+      return { message: 'User created successfully', data: newUser };
+    } catch (error) {
+      if (error.code === 'P2002') {
+        throw new Error('User with this email already exists');
+      }
+      throw error;
+    }
+  }
+  getProfile() {
+    return { message: 'Get current user profile (guarded)' };
   }
 
-  findAll() {
-    return `This action returns all user`;
+  updateProfile(updateUserDto: UpdateUserDto) {
+    return { message: 'Update user profile', data: updateUserDto };
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  deleteProfile() {
+    return { message: 'Schedule user for deletion' };
   }
 }

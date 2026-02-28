@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                        Int       @id @default(autoincrement())
+  name                      String
+  email                     String    @unique
+  created_at                DateTime  @default(now())
+  updated_at                DateTime  @updatedAt @default(now())
+  scheduled_for_deletion_at DateTime?
+
+  forms Form[]
+  // subscriptions               UserSubscription
+
+  @@map("users")
+}
+
+// model Plan {
+//   id                        Int                  @id @default(autoincrement())
+//   name                      String               @unique
+//   message_limit             Int
+//   message_size_limit_bytes  Int
+//   is_active                 Boolean              @default(true)
+//   created_at                DateTime             @default(now())
+
+//   subscriptions             UserSubscription
+
+//   @@map("plans")
+// }
+
+// model UserSubscription {
+//   id         Int       @id @default(autoincrement())
+//   user_id    Int
+//   plan_id    Int
+//   start_date DateTime
+//   end_date   DateTime?
+//   is_active  Boolean   @default(true)
+//   created_at DateTime  @default(now())
+
+//   user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+//   plan Plan @relation(fields: [plan_id], references: [id])
+
+//   @@map("user_subscriptions")
+// }
+
+model Form {
+  id                        Int      @id @default(autoincrement())
+  user_id                   Int
+  name                      String
+  description               String?
+  max_submissions_total     Int?
+  submission_limit_per_user Int?
+  fields_schema             Json
+  config_context            Json?
+  ttl_interval              String? // PostgreSQL INTERVAL handled as string in Prisma
+  is_active                 Boolean  @default(true)
+  created_at                DateTime @default(now())
+  updated_at                DateTime @updatedAt @default(now())
+
+  user        User             @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  submissions FormSubmission[]
+
+  @@map("forms")
+}
+
+model FormSubmission {
+  id            Int      @id @default(autoincrement())
+  form_id       Int
+  response_data Json
+  status        Int      @default(-1) // -1: NOT_MATCHED, 0: MATCHED, 1: STRONGLY_MATCHED
+  created_at    DateTime @default(now())
+
+  form Form @relation(fields: [form_id], references: [id], onDelete: Cascade)
+
+  @@map("form_submissions")
+}

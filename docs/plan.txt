@@ -93,3 +93,10 @@ lets use local sql for now
 why?
 easy of development and faster then using supabase 
 [can see data in tabular form]
+
+
+day 7 
+
+lets make form api work
+
+[need guard now may be]

@@ -7,54 +7,52 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { FormService } from './form.service';
 import { CreateFormDto } from './dto/create-form.dto';
 import { UpdateFormDto } from './dto/update-form.dto';
 import { SubmitFormDto } from './dto/submit-form.dto';
 
 @Controller('form')
 export class FormController {
+  constructor(private readonly formService: FormService) { }
+
   @Post()
   create(@Body() createFormDto: CreateFormDto) {
-    return { message: 'Create a new form', data: createFormDto };
+    return this.formService.create(createFormDto);
   }
 
   @Get()
   findAll() {
-    return { message: 'List forms created by the user' };
+    return this.formService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return { message: `Get details of a specific form ${id} (with schema)` };
+    return this.formService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateFormDto: UpdateFormDto) {
-    return { message: `Update form ${id}`, data: updateFormDto };
+    return this.formService.update(id, updateFormDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return { message: `Delete a form ${id}` };
+    return this.formService.remove(id);
   }
 
   @Post(':id/submit')
   submit(@Param('id') id: string, @Body() submitFormDto: SubmitFormDto) {
-    return {
-      message: `Public endpoint to submit a form response for form ${id}`,
-      data: submitFormDto,
-    };
+    return this.formService.submit(id, submitFormDto);
   }
 
   @Get(':id/submissions')
   getSubmissions(@Param('id') id: string) {
-    return {
-      message: `Get all submissions for specific form ${id} (owner only)`,
-    };
+    return this.formService.getSubmissions(id);
   }
 
   @Get('submission/:subId')
   getSubmissionDetails(@Param('subId') subId: string) {
-    return { message: `Get a specific submission details for subId ${subId}` };
+    return this.formService.getSubmissionDetails(subId);
   }
 }

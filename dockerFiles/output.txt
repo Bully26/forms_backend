@@ -1,0 +1,566 @@
+Warning: environ value jdk-21.0.10+7 for key :java-version has been overwritten with 21.0.10
+2026-02-28 08:42:46,387 INFO metabase.util :: Maximum memory available to JVM: 7.7 GB 
+2026-02-28 08:42:48,478 INFO util.encryption :: Saved credentials encryption is DISABLED for this Metabase instance. 🔓 
+ For more information, see https://metabase.com/docs/latest/operations-guide/encrypting-database-details-at-rest.html 
+2026-02-28 08:42:57,570 INFO driver.impl :: [34mRegistered abstract driver :sql[0m  🚚 
+2026-02-28 08:42:57,623 INFO driver.impl :: [34mRegistered abstract driver :sql-jdbc[0m (parents: [:sql]) 🚚 
+2026-02-28 08:42:57,641 INFO driver.impl :: [34mRegistered driver :h2[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:42:57,682 INFO driver.impl :: [34mRegistered driver :mysql[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:42:57,720 INFO driver.impl :: [34mRegistered driver :postgres[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:42:58,654 INFO core.core :: 
+Metabase v0.58.8 (c2b1490) 
+
+Copyright © 2026 Metabase, Inc. 
+
+Metabase Enterprise Edition extensions are NOT PRESENT. 
+2026-02-28 08:42:58,660 INFO core.core :: Starting Metabase in STANDALONE mode 
+2026-02-28 08:42:58,816 INFO server.instance :: Launching Embedded Jetty Webserver with config:
+ {:port 3000, :host "0.0.0.0", :send-server-version? false}
+ 
+2026-02-28 08:42:58,874 INFO core.core :: Starting Metabase version v0.58.8 (c2b1490) ... 
+2026-02-28 08:42:58,877 INFO core.core :: System info:
+ {"file.encoding" "UTF-8",
+ "java.runtime.name" "OpenJDK Runtime Environment",
+ "java.runtime.version" "21.0.10+7-LTS",
+ "java.vendor" "Eclipse Adoptium",
+ "java.vendor.url" "https://adoptium.net/",
+ "java.version" "21.0.10",
+ "java.vm.name" "OpenJDK 64-Bit Server VM",
+ "java.vm.version" "21.0.10+7-LTS",
+ "os.name" "Linux",
+ "os.version" "6.17.0-14-generic",
+ "user.language" "en",
+ "user.timezone" "GMT"}
+ 
+2026-02-28 08:42:58,881 INFO plugins.impl :: Loading plugins in /plugins... 
+2026-02-28 08:42:58,988 INFO util.files :: Extract file /modules/sqlite.metabase-driver.jar -> /plugins/sqlite.metabase-driver.jar 
+2026-02-28 08:42:59,030 INFO util.files :: Extract file /modules/snowflake.metabase-driver.jar -> /plugins/snowflake.metabase-driver.jar 
+2026-02-28 08:42:59,377 INFO util.files :: Extract file /modules/oracle.metabase-driver.jar -> /plugins/oracle.metabase-driver.jar 
+2026-02-28 08:42:59,379 INFO util.files :: Extract file /modules/mongo.metabase-driver.jar -> /plugins/mongo.metabase-driver.jar 
+2026-02-28 08:42:59,394 INFO util.files :: Extract file /modules/databricks.metabase-driver.jar -> /plugins/databricks.metabase-driver.jar 
+2026-02-28 08:42:59,459 INFO util.files :: Extract file /modules/hive-like.metabase-driver.jar -> /plugins/hive-like.metabase-driver.jar 
+2026-02-28 08:42:59,634 INFO util.files :: Extract file /modules/sqlserver.metabase-driver.jar -> /plugins/sqlserver.metabase-driver.jar 
+2026-02-28 08:42:59,640 INFO util.files :: Extract file /modules/bigquery-cloud-sdk.metabase-driver.jar -> /plugins/bigquery-cloud-sdk.metabase-driver.jar 
+2026-02-28 08:42:59,736 INFO util.files :: Extract file /modules/athena.metabase-driver.jar -> /plugins/athena.metabase-driver.jar 
+2026-02-28 08:42:59,847 INFO util.files :: Extract file /modules/vertica.metabase-driver.jar -> /plugins/vertica.metabase-driver.jar 
+2026-02-28 08:42:59,848 INFO util.files :: Extract file /modules/redshift.metabase-driver.jar -> /plugins/redshift.metabase-driver.jar 
+2026-02-28 08:42:59,857 INFO util.files :: Extract file /modules/sparksql.metabase-driver.jar -> /plugins/sparksql.metabase-driver.jar 
+2026-02-28 08:42:59,858 INFO util.files :: Extract file /modules/clickhouse.metabase-driver.jar -> /plugins/clickhouse.metabase-driver.jar 
+2026-02-28 08:42:59,868 INFO util.files :: Extract file /modules/druid-jdbc.metabase-driver.jar -> /plugins/druid-jdbc.metabase-driver.jar 
+2026-02-28 08:42:59,898 INFO util.files :: Extract file /modules/druid.metabase-driver.jar -> /plugins/druid.metabase-driver.jar 
+2026-02-28 08:42:59,900 INFO util.files :: Extract file /modules/presto-jdbc.metabase-driver.jar -> /plugins/presto-jdbc.metabase-driver.jar 
+2026-02-28 08:42:59,950 INFO util.files :: Extract file /modules/starburst.metabase-driver.jar -> /plugins/starburst.metabase-driver.jar 
+2026-02-28 08:43:00,113 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :starburst...[0m 
+2026-02-28 08:43:00,116 INFO driver.impl :: [34mRegistered driver :starburst[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,121 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :clickhouse...[0m 
+2026-02-28 08:43:00,121 INFO driver.impl :: [34mRegistered driver :clickhouse[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,125 INFO plugins.dependencies :: [31mMetabase cannot initialize plugin Metabase Oracle Driver due to required dependencies.[0m Metabase requires the Oracle JDBC driver in order to connect to Oracle databases, but we can't ship it as part of Metabase due to licensing restrictions. See https://metabase.com/docs/latest/administration-guide/databases/oracle.html for more details.
+ 
+2026-02-28 08:43:00,126 INFO plugins.dependencies :: Metabase Oracle Driver dependency {:class oracle.jdbc.OracleDriver} satisfied? false 
+2026-02-28 08:43:00,127 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Oracle Driver"][0m 
+2026-02-28 08:43:00,129 INFO plugins.dependencies :: [31mMetabase cannot initialize plugin Metabase Vertica Driver due to required dependencies.[0m Metabase requires the Vertica JDBC driver in order to connect to Vertica databases, but we can't ship it as part of Metabase due to licensing restrictions. See https://metabase.com/docs/latest/administration-guide/databases/vertica.html for more details.
+ 
+2026-02-28 08:43:00,129 INFO plugins.dependencies :: Metabase Vertica Driver dependency {:class com.vertica.jdbc.Driver} satisfied? false 
+2026-02-28 08:43:00,130 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Vertica Driver" "Metabase Oracle Driver"][0m 
+2026-02-28 08:43:00,132 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sqlserver...[0m 
+2026-02-28 08:43:00,132 INFO driver.impl :: [34mRegistered driver :sqlserver[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,135 INFO plugins.dependencies :: Plugin 'Metabase Spark SQL Driver' depends on plugin 'Metabase Hive Like Abstract Driver' 
+2026-02-28 08:43:00,135 INFO plugins.dependencies :: Metabase Spark SQL Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? false 
+2026-02-28 08:43:00,135 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Vertica Driver" "Metabase Spark SQL Driver" "Metabase Oracle Driver"][0m 
+2026-02-28 08:43:00,153 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :athena...[0m 
+2026-02-28 08:43:00,154 INFO driver.impl :: [34mRegistered driver :athena[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,160 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :bigquery-cloud-sdk...[0m 
+2026-02-28 08:43:00,160 INFO driver.impl :: [34mRegistered driver :bigquery-cloud-sdk[0m (parents: [:sql]) 🚚 
+2026-02-28 08:43:00,162 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :redshift...[0m 
+2026-02-28 08:43:00,163 INFO driver.impl :: [34mRegistered driver :redshift[0m (parents: [:postgres]) 🚚 
+2026-02-28 08:43:00,164 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :druid...[0m 
+2026-02-28 08:43:00,164 INFO driver.impl :: [34mRegistered driver :druid[0m  🚚 
+2026-02-28 08:43:00,168 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :mongo...[0m 
+2026-02-28 08:43:00,168 INFO driver.impl :: [34mRegistered driver :mongo[0m  🚚 
+2026-02-28 08:43:00,179 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :hive-like...[0m 
+2026-02-28 08:43:00,179 INFO driver.impl :: [34mRegistered abstract driver :hive-like[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,180 INFO plugins.dependencies :: Metabase Spark SQL Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? true 
+2026-02-28 08:43:00,181 DEBUG plugins.initialize :: [33mDependencies satisfied; these plugins will now be loaded: ["Metabase Spark SQL Driver"][0m 
+2026-02-28 08:43:00,182 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sparksql...[0m 
+2026-02-28 08:43:00,182 INFO driver.impl :: [34mRegistered driver :sparksql[0m (parents: [:hive-like]) 🚚 
+2026-02-28 08:43:00,186 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :druid-jdbc...[0m 
+2026-02-28 08:43:00,186 INFO driver.impl :: [34mRegistered driver :druid-jdbc[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,192 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :presto-jdbc...[0m 
+2026-02-28 08:43:00,192 INFO driver.impl :: [34mRegistered driver :presto-jdbc[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,202 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :snowflake...[0m 
+2026-02-28 08:43:00,203 INFO driver.impl :: [34mRegistered driver :snowflake[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,205 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sqlite...[0m 
+2026-02-28 08:43:00,205 INFO driver.impl :: [34mRegistered driver :sqlite[0m (parents: [:sql-jdbc]) 🚚 
+2026-02-28 08:43:00,215 INFO plugins.dependencies :: Plugin 'Metabase Databricks Driver' depends on plugin 'Metabase Hive Like Abstract Driver' 
+2026-02-28 08:43:00,216 INFO plugins.dependencies :: Metabase Databricks Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? true 
+2026-02-28 08:43:00,217 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :databricks...[0m 
+2026-02-28 08:43:00,217 INFO driver.impl :: [34mRegistered driver :databricks[0m (parents: [:hive-like]) 🚚 
+2026-02-28 08:43:00,222 INFO core.core :: Setting up and migrating Metabase DB. Please sit tight, this may take a minute... 
+2026-02-28 08:43:00,224 INFO app-db.setup :: [36mVerifying postgres Database Connection ...[0m 
+2026-02-28 08:43:00,234 INFO app-db.setup :: Successfully verified PostgreSQL 16.13 (Debian 16.13-1.pgdg13+1) application database connection. ✅ 
+2026-02-28 08:43:00,235 INFO app-db.setup :: [36mChecking if a database downgrade is required...[0m 
+2026-02-28 08:43:00,341 INFO liquibase.database :: Set default schema name to public 
+2026-02-28 08:43:00,496 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+2026-02-28 08:43:00,906 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+2026-02-28 08:43:00,925 INFO liquibase.changelog :: Reading resource: migrations/057_update_migrations.yaml 
+2026-02-28 08:43:00,972 INFO liquibase.changelog :: Reading resource: migrations/058_update_migrations.yaml 
+2026-02-28 08:43:00,995 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+2026-02-28 08:43:01,115 INFO app-db.setup :: Running Database Migrations... 
+2026-02-28 08:43:01,116 INFO app-db.setup :: Setting up Liquibase... 
+2026-02-28 08:43:01,125 INFO liquibase.database :: Set default schema name to public 
+2026-02-28 08:43:01,132 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+2026-02-28 08:43:01,240 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+2026-02-28 08:43:01,249 INFO liquibase.changelog :: Reading resource: migrations/057_update_migrations.yaml 
+2026-02-28 08:43:01,295 INFO liquibase.changelog :: Reading resource: migrations/058_update_migrations.yaml 
+2026-02-28 08:43:01,321 INFO analytics.prometheus :: Running prometheus metrics without a webserver 
+2026-02-28 08:43:01,322 INFO analytics.prometheus :: Starting prometheus metrics collector 
+2026-02-28 08:43:01,323 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+2026-02-28 08:43:01,345 INFO app-db.liquibase :: Updating liquibase table to reflect consolidated changeset filenames 
+2026-02-28 08:43:01,355 INFO liquibase.logging :: Successfully acquired change log lock 
+2026-02-28 08:43:01,356 INFO app-db.liquibase :: No migration lock found. 
+2026-02-28 08:43:01,356 INFO app-db.liquibase :: Migration lock acquired. 
+2026-02-28 08:43:01,377 INFO liquibase.logging :: Successfully released change log lock 
+2026-02-28 08:43:01,378 INFO app-db.setup :: Liquibase is ready. 
+2026-02-28 08:43:01,379 INFO app-db.liquibase :: Checking if Database has unrun migrations... 
+2026-02-28 08:43:01,389 INFO liquibase.database :: Set default schema name to public 
+2026-02-28 08:43:01,393 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+2026-02-28 08:43:01,504 ERROR middleware.log :: [31mGET /api/health 503 1ms (0 DB calls) {:metabase-user-id nil} 
+{:status "initializing", :progress 0.3}
+[0m 
+2026-02-28 08:43:01,505 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+2026-02-28 08:43:01,515 INFO liquibase.changelog :: Reading resource: migrations/057_update_migrations.yaml 
+2026-02-28 08:43:01,540 INFO liquibase.changelog :: Reading resource: migrations/058_update_migrations.yaml 
+2026-02-28 08:43:01,557 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+2026-02-28 08:43:01,582 INFO liquibase.changelog :: Reading from "public"."databasechangelog" 
+2026-02-28 08:43:01,894 INFO app-db.liquibase :: No unrun migrations found. 
+2026-02-28 08:43:01,894 INFO app-db.setup :: Database Migrations Current ... ✅ 
+2026-02-28 08:43:01,925 INFO metabase.util :: [32mDatabase setup took 1.7 s[0m 
+2026-02-28 08:43:01,948 INFO core.core :: Setting up prometheus metrics 
+2026-02-28 08:43:02,000 INFO impl.StdSchedulerFactory :: Using default implementation for ThreadExecutor 
+2026-02-28 08:43:02,023 INFO core.SchedulerSignalerImpl :: Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2026-02-28 08:43:02,024 INFO core.QuartzScheduler :: Quartz Scheduler v.2.3.2 created. 
+2026-02-28 08:43:02,026 INFO jdbcjobstore.JobStoreTX :: Using db table-based data access locking (synchronization). 
+2026-02-28 08:43:02,028 INFO jdbcjobstore.JobStoreTX :: JobStoreTX initialized. 
+2026-02-28 08:43:02,029 INFO core.QuartzScheduler :: Scheduler meta-data: Quartz Scheduler (v2.3.2) 'MetabaseScheduler' with instanceId 'ce67a52ac1321772268182004'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.impl.jdbcjobstore.JobStoreTX' - which supports persistence. and is clustered.
+ 
+2026-02-28 08:43:02,030 INFO impl.StdSchedulerFactory :: Quartz scheduler 'MetabaseScheduler' initialized from default resource file in Quartz package: 'quartz.properties' 
+2026-02-28 08:43:02,030 INFO impl.StdSchedulerFactory :: Quartz scheduler version: 2.3.2 
+2026-02-28 08:43:02,030 INFO core.QuartzScheduler :: Scheduler MetabaseScheduler_$_ce67a52ac1321772268182004 paused. 
+2026-02-28 08:43:02,031 INFO core.QuartzScheduler :: JobFactory set to: metabase.task.job_factory$create$reify__59355@35ce9692 
+2026-02-28 08:43:02,033 INFO task.impl :: Task scheduler initialized into standby mode. 
+2026-02-28 08:43:02,040 ERROR middleware.log :: [31mGET /api/health 503 1ms (0 DB calls) {:metabase-user-id nil} 
+{:status "initializing", :progress 0.5}
+[0m 
+2026-02-28 08:43:02,132 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.anonymous-stats.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,138 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.1 reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,142 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.2 reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,147 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.follow-up-emails.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,152 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.truncate-audit-tables.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,156 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.task-history-cleanup.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,160 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.creator-sentiment-emails.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,164 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.search-index.reindex.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,168 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.refresh-channel-cache.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,171 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.upgrade-checks.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,175 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.2 reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,178 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.1 reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,183 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.session-cleanup.trigger reset from ERROR state to: WAITING 
+2026-02-28 08:43:02,188 INFO task.impl :: Initializing task [32mPersistPrune[0m 📆 
+2026-02-28 08:43:02,202 INFO task.impl :: Initializing task [32mSyncDatabases[0m 📆 
+2026-02-28 08:43:02,229 INFO task.sync-databases :: Updated default schedules for 0 databases 
+2026-02-28 08:43:02,230 INFO task.impl :: Initializing task [32mTaskHistoryCleanup[0m 📆 
+2026-02-28 08:43:02,265 INFO task.impl :: Initializing task [32mCheckForNewVersions[0m 📆 
+2026-02-28 08:43:02,282 INFO task.impl :: Initializing task [32mSearchIndexReindex[0m 📆 
+2026-02-28 08:43:02,303 INFO task.impl :: Initializing task [32mSendCreatorSentimentEmails[0m 📆 
+2026-02-28 08:43:02,318 INFO task.impl :: Initializing task [32mModelIndexValues[0m 📆 
+2026-02-28 08:43:02,356 INFO task.impl :: Initializing task [32mTruncateAuditTables[0m 📆 
+2026-02-28 08:43:02,372 INFO task.impl :: Initializing task [32mSendPulses[0m 📆 
+2026-02-28 08:43:02,386 INFO task.impl :: Initializing task [32mPersistRefresh[0m 📆 
+2026-02-28 08:43:02,421 INFO driver.impl :: [33mInitializing driver :sql...[0m 
+2026-02-28 08:43:02,421 INFO driver.impl :: [33mInitializing driver :sql-jdbc...[0m 
+2026-02-28 08:43:02,422 INFO driver.impl :: [33mInitializing driver :h2...[0m 
+2026-02-28 08:43:02,437 INFO driver.impl :: [33mInitializing driver :postgres...[0m 
+2026-02-28 08:43:02,457 INFO task.impl :: Initializing task [32mSendNotifications[0m 📆 
+2026-02-28 08:43:02,470 INFO task.impl :: Initializing task [32mRefreshSlackChannelsAndUsers[0m 📆 
+2026-02-28 08:43:02,491 INFO task.impl :: Initializing task [32mSendWarnPulseRemovalEmail[0m 📆 
+2026-02-28 08:43:02,500 INFO task.impl :: Initializing task [32mSendAnonymousUsageStats[0m 📆 
+2026-02-28 08:43:02,514 INFO task.impl :: Initializing task [32mSessionCleanup[0m 📆 
+2026-02-28 08:43:02,524 INFO task.impl :: Initializing task [32mSendFollowUpEmails[0m 📆 
+2026-02-28 08:43:02,557 ERROR middleware.log :: [31mGET /api/health 503 1ms (0 DB calls) {:metabase-user-id nil} 
+{:status "initializing", :progress 0.5}
+[0m 
+2026-02-28 08:43:02,591 INFO util.files :: File system at #object[java.net.URI 0x72920172 jar:file:/app/metabase.jar!/sample-database.db.mv.db] already exists 
+2026-02-28 08:43:02,592 INFO util.files :: Extract file /sample-database.db.mv.db -> /plugins/sample-database.db.mv.db 
+2026-02-28 08:43:02,627 INFO core.core :: Not installing EE audit app DB 
+2026-02-28 08:43:02,628 INFO notification.seed :: Seeding default notifications 
+2026-02-28 08:43:02,872 INFO notification.seed :: Seeded notifications: {:skip 6} 
+2026-02-28 08:43:02,880 INFO models.database :: [36mHealth check: queueing appdb {:id 2}[0m 
+2026-02-28 08:43:02,884 INFO startup.core :: Running setup logic [32mSearchIndexInit[0m ☑️ 
+2026-02-28 08:43:02,885 INFO models.database :: [36mHealth check: checking appdb {:id 2}[0m 
+2026-02-28 08:43:02,894 INFO jdbcjobstore.JobStoreTX :: ClusterManager: detected 1 failed or restarted instances. 
+2026-02-28 08:43:02,894 INFO jdbcjobstore.JobStoreTX :: ClusterManager: Scanning for instance "eef1b73adf291772264655758"'s failed in-progress jobs. 
+2026-02-28 08:43:02,900 INFO core.QuartzScheduler :: Scheduler MetabaseScheduler_$_ce67a52ac1321772268182004 started. 
+2026-02-28 08:43:02,901 INFO task.impl :: Task scheduler started 
+2026-02-28 08:43:02,903 INFO models.database :: [32mHealth check: success appdb {:id 2}[0m 
+2026-02-28 08:43:02,903 INFO jdbcjobstore.JobStoreTX :: Handling 2 trigger(s) that missed their scheduled fire-time. 
+2026-02-28 08:43:02,905 INFO util.queue :: Starting listener [32msearch-index-update[0m with 1 threads 🎧 
+2026-02-28 08:43:02,908 INFO core.core :: Metabase Initialization COMPLETE 
+2026-02-28 08:43:02,928 INFO search.core :: Initializing search indexes 
+2026-02-28 08:43:02,929 INFO core.core :: Metabase Initialization COMPLETE in 4.0 s (JVM uptime: 20.4 s) 
+2026-02-28 08:43:02,952 INFO task.send-pulses :: Initializing SendPulse triggers for dashboard subscriptions {mb-quartz-job-type=InitSendPulseTriggers}
+2026-02-28 08:43:02,967 INFO task.send :: Initializing SendNotification triggers {mb-quartz-job-type=InitNotificationTriggers}
+2026-02-28 08:43:02,987 INFO search.core :: Found existing search index, and using it. 
+2026-02-28 08:43:02,999 INFO task.refresh-slack-channel-user-cache :: Slack is not configured, not refreshing slack user/channel cache. {mb-quartz-job-type=RefreshCacheOnStartup}
+2026-02-28 08:43:03,074 DEBUG middleware.log :: [32mGET /api/health 200 1ms (0 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (6 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 
+2026-02-28 08:43:03,143 INFO i18n.impl :: Reading available locales from locales.clj... 
+2026-02-28 08:43:03,251 INFO util.fonts :: Reading available fonts from /frontend_client/app/fonts 
+2026-02-28 08:43:03,713 DEBUG middleware.log :: [32mGET /api/session/properties 200 15ms (0 DB calls) App DB connections: 0/13 Jetty threads: 6/50 (6 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 
+2026-02-28 08:43:03,716 DEBUG middleware.log :: [31mGET /api/user/current 401 1ms (0 DB calls) {:metabase-user-id nil} 
+"Unauthenticated"
+[0m 
+2026-02-28 08:43:17,287 ERROR session.api :: Authentication endpoint error 
+clojure.lang.ExceptionInfo: Password did not match stored password.
+	at metabase.session.api$do_http_401_on_error.invokeStatic(api.clj:107)
+	at metabase.session.api$do_http_401_on_error.invoke(api.clj:103)
+	at metabase.session.api$fn__125549$fn__125555.invoke(api.clj:137)
+	at metabase.api.macros$_core_fn$core_fn__101471.invoke(macros.clj:426)
+	at metabase.api.macros$endpoint_handler_STAR_$handler__101513.invoke(macros.clj:622)
+	at metabase.api.macros$build_ns_handler$ns_handler_STAR___101539.invoke(macros.clj:686)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.session.api$_PLUS_log_all_request_failures$fn__125705.invoke(api.clj:339)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:23)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at metabase.api_routes.routes$fn__125769.invokeStatic(routes.clj:103)
+	at metabase.api_routes.routes$fn__125769.invoke(routes.clj:102)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at clojure.lang.Var.invoke(Var.java:395)
+	at metabase.server.routes$api_handler$api_handler_STAR___103211.invoke(routes.clj:88)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at compojure.core$make_context$handler__102428.invoke(core.clj:290)
+	at compojure.core$make_context$fn__102432.invoke(core.clj:300)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:24)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:23)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at metabase.server.middleware.exceptions$catch_uncaught_exceptions$fn__129418.invoke(exceptions.clj:84)
+	at metabase.server.middleware.exceptions$catch_api_exceptions$fn__129415.invoke(exceptions.clj:73)
+	at metabase.server.middleware.log$log_api_call$fn__126446$fn__126447$fn__126448.invoke(log.clj:225)
+	at metabase.driver.sql_jdbc.execute.diagnostic$do_with_diagnostic_info.invokeStatic(diagnostic.clj:17)
+	at metabase.driver.sql_jdbc.execute.diagnostic$do_with_diagnostic_info.invoke(diagnostic.clj:12)
+	at metabase.server.middleware.log$log_api_call$fn__126446$fn__126447.invoke(log.clj:216)
+	at toucan2.execute$do_with_call_counts.invokeStatic(execute.clj:112)
+	at toucan2.execute$do_with_call_counts.invoke(execute.clj:103)
+	at metabase.server.middleware.log$log_api_call$fn__126446.invoke(log.clj:215)
+	at metabase.server.middleware.browser_cookie$ensure_browser_id_cookie$fn__132018.invoke(browser_cookie.clj:40)
+	at metabase.server.middleware.security$add_security_headers$fn__129381.invoke(security.clj:332)
+	at metabase.server.middleware.json$wrap_json_body$fn__128846.invoke(json.clj:128)
+	at metabase.server.middleware.offset_paging$handle_paging$fn__130754.invoke(offset_paging.clj:48)
+	at metabase.server.middleware.json$wrap_streamed_json_response$fn__128834.invoke(json.clj:83)
+	at metabase.server.middleware.metadata_provider_cache$wrap_metadata_provider_cache$fn__132028.invoke(metadata_provider_cache.clj:11)
+	at ring.middleware.keyword_params$wrap_keyword_params$fn__132293.invoke(keyword_params.clj:55)
+	at ring.middleware.params$wrap_params$fn__132312.invoke(params.clj:77)
+	at metabase.server.middleware.misc$maybe_set_site_url$fn__110120.invoke(misc.clj:78)
+	at metabase.server.middleware.session$reset_session_timeout$fn__132006.invoke(session.clj:297)
+	at metabase.server.middleware.session$bind_current_user$fn__131999$fn__132000.invoke(session.clj:272)
+	at metabase.request.session$do_with_current_user$fn__82781.invoke(session.clj:60)
+	at metabase.request.session$do_with_current_user$do_with_user_local_values__82776.invoke(session.clj:56)
+	at metabase.request.session$do_with_current_user.invokeStatic(session.clj:57)
+	at metabase.request.session$do_with_current_user.invoke(session.clj:38)
+	at metabase.server.middleware.session$bind_current_user$fn__131999.invoke(session.clj:271)
+	at metabase.server.middleware.session$wrap_current_user_info$fn__131995.invoke(session.clj:247)
+	at metabase.server.middleware.settings_cache$wrap_settings_cache_check$fn__129609.invoke(settings_cache.clj:50)
+	at metabase.analytics.sdk$embedding_mw$embedding_mw_fn__59791.invoke(sdk.clj:69)
+	at metabase.server.middleware.session$wrap_session_key$fn__131940.invoke(session.clj:90)
+	at metabase.server.middleware.auth$wrap_static_api_key$fn__126592.invoke(auth.clj:17)
+	at ring.middleware.cookies$wrap_cookies$fn__132213.invoke(cookies.clj:200)
+	at metabase.server.middleware.misc$add_version$fn__110083.invoke(misc.clj:29)
+	at metabase.server.middleware.misc$add_content_type$fn__110091.invoke(misc.clj:47)
+	at metabase.server.middleware.misc$disable_streaming_buffering$fn__110128.invoke(misc.clj:94)
+	at ring.middleware.gzip$wrap_gzip$fn__132255.invoke(gzip.clj:86)
+	at metabase.server.middleware.request_id$wrap_request_id$fn__103899.invoke(request_id.clj:10)
+	at metabase.server.middleware.misc$bind_request$fn__110131$fn__110132.invoke(misc.clj:106)
+	at metabase.request.current$do_with_current_request.invokeStatic(current.clj:19)
+	at metabase.request.current$do_with_current_request.invoke(current.clj:15)
+	at metabase.server.middleware.misc$bind_request$fn__110131.invoke(misc.clj:105)
+	at metabase.server.middleware.ssl$redirect_to_https_middleware$fn__132042.invoke(ssl.clj:42)
+	at metabase.server.instance$async_proxy_handler$fn__126150.invoke(instance.clj:82)
+	at metabase.server.instance.proxy$org.eclipse.jetty.ee9.servlet.ServletHandler$ff19274a.doHandle(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.handle(ScopedHandler.java:125)
+	at metabase.server.statistics_handler$new_handler$fn__100300.invoke(statistics_handler.clj:105)
+	at metabase.server.statistics_handler.proxy$org.eclipse.jetty.ee9.nested.HandlerWrapper$ff19274a.handle(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.HandlerWrapper.handle(HandlerWrapper.java:124)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextHandle(ScopedHandler.java:195)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.doHandle(ContextHandler.java:1041)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextScope(ScopedHandler.java:162)
+	at org.eclipse.jetty.ee9.servlet.ServletHandler.doScope(ServletHandler.java:483)
+	at metabase.server.instance.proxy$org.eclipse.jetty.ee9.servlet.ServletHandler$ff19274a.doScope(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextScope(ScopedHandler.java:160)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.doScope(ContextHandler.java:962)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.handle(ScopedHandler.java:123)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.handle(ContextHandler.java:1723)
+	at org.eclipse.jetty.ee9.nested.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1581)
+	at org.eclipse.jetty.ee9.nested.HttpChannel.dispatch(HttpChannel.java:733)
+	at org.eclipse.jetty.ee9.nested.HttpChannel.handle(HttpChannel.java:520)
+	at org.eclipse.jetty.ee9.nested.ContextHandler$CoreContextHandler$CoreToNestedHandler.handle(ContextHandler.java:3048)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1220)
+	at org.eclipse.jetty.server.Server.handle(Server.java:195)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:680)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:411)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1809)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:312)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: clojure.lang.ExceptionInfo: Password did not match stored password.
+	at metabase.session.api$login.invokeStatic(api.clj:99)
+	at metabase.session.api$login.invoke(api.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$do_login__125557.invoke(api.clj:132)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560$fn__125561$fn__125562.invoke(api.clj:140)
+	at throttle.core$do_with_throttling.invokeStatic(core.clj:93)
+	at throttle.core$do_with_throttling.invoke(core.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560$fn__125561.invoke(api.clj:138)
+	at throttle.core$do_with_throttling.invokeStatic(core.clj:93)
+	at throttle.core$do_with_throttling.invoke(core.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560.invoke(api.clj:138)
+	at metabase.session.api$do_http_401_on_error.invokeStatic(api.clj:105)
+	... 130 more
+2026-02-28 08:43:17,304 DEBUG middleware.log :: [31mPOST /api/session 401 163ms (2 DB calls) {:metabase-user-id nil} 
+{:errors
+ {:password
+  #metabase.util.i18n.UserLocalizedString{:format-string "did not match stored password",
+                                          :args [],
+                                          :pluralization-opts {}}}}
+[0m 
+2026-02-28 08:43:24,007 ERROR session.api :: Authentication endpoint error 
+clojure.lang.ExceptionInfo: Password did not match stored password.
+	at metabase.session.api$do_http_401_on_error.invokeStatic(api.clj:107)
+	at metabase.session.api$do_http_401_on_error.invoke(api.clj:103)
+	at metabase.session.api$fn__125549$fn__125555.invoke(api.clj:137)
+	at metabase.api.macros$_core_fn$core_fn__101471.invoke(macros.clj:426)
+	at metabase.api.macros$endpoint_handler_STAR_$handler__101513.invoke(macros.clj:622)
+	at metabase.api.macros$build_ns_handler$ns_handler_STAR___101539.invoke(macros.clj:686)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.session.api$_PLUS_log_all_request_failures$fn__125705.invoke(api.clj:339)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:23)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at metabase.api_routes.routes$fn__125769.invokeStatic(routes.clj:103)
+	at metabase.api_routes.routes$fn__125769.invoke(routes.clj:102)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at clojure.lang.Var.invoke(Var.java:395)
+	at metabase.server.routes$api_handler$api_handler_STAR___103211.invoke(routes.clj:88)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at compojure.core$make_context$handler__102428.invoke(core.clj:290)
+	at compojure.core$make_context$fn__102432.invoke(core.clj:300)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at compojure.core$wrap_route_matches$fn__102381.invoke(core.clj:153)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400$f__102401$respond_SINGLEQUOTE___102402.invoke(core.clj:197)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:24)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at metabase.api.util.handlers$_route_map_handler$fn__102463.invoke(handlers.clj:23)
+	at metabase.api.open_api.HandlerWithOpenAPISpec.invoke(open_api.clj:41)
+	at compojure.core$routes$fn__102400$f__102401.invoke(core.clj:198)
+	at compojure.core$routes$fn__102400.invoke(core.clj:200)
+	at metabase.server.middleware.exceptions$catch_uncaught_exceptions$fn__129418.invoke(exceptions.clj:84)
+	at metabase.server.middleware.exceptions$catch_api_exceptions$fn__129415.invoke(exceptions.clj:73)
+	at metabase.server.middleware.log$log_api_call$fn__126446$fn__126447$fn__126448.invoke(log.clj:225)
+	at metabase.driver.sql_jdbc.execute.diagnostic$do_with_diagnostic_info.invokeStatic(diagnostic.clj:17)
+	at metabase.driver.sql_jdbc.execute.diagnostic$do_with_diagnostic_info.invoke(diagnostic.clj:12)
+	at metabase.server.middleware.log$log_api_call$fn__126446$fn__126447.invoke(log.clj:216)
+	at toucan2.execute$do_with_call_counts.invokeStatic(execute.clj:112)
+	at toucan2.execute$do_with_call_counts.invoke(execute.clj:103)
+	at metabase.server.middleware.log$log_api_call$fn__126446.invoke(log.clj:215)
+	at metabase.server.middleware.browser_cookie$ensure_browser_id_cookie$fn__132018.invoke(browser_cookie.clj:40)
+	at metabase.server.middleware.security$add_security_headers$fn__129381.invoke(security.clj:332)
+	at metabase.server.middleware.json$wrap_json_body$fn__128846.invoke(json.clj:128)
+	at metabase.server.middleware.offset_paging$handle_paging$fn__130754.invoke(offset_paging.clj:48)
+	at metabase.server.middleware.json$wrap_streamed_json_response$fn__128834.invoke(json.clj:83)
+	at metabase.server.middleware.metadata_provider_cache$wrap_metadata_provider_cache$fn__132028.invoke(metadata_provider_cache.clj:11)
+	at ring.middleware.keyword_params$wrap_keyword_params$fn__132293.invoke(keyword_params.clj:55)
+	at ring.middleware.params$wrap_params$fn__132312.invoke(params.clj:77)
+	at metabase.server.middleware.misc$maybe_set_site_url$fn__110120.invoke(misc.clj:78)
+	at metabase.server.middleware.session$reset_session_timeout$fn__132006.invoke(session.clj:297)
+	at metabase.server.middleware.session$bind_current_user$fn__131999$fn__132000.invoke(session.clj:272)
+	at metabase.request.session$do_with_current_user$fn__82781.invoke(session.clj:60)
+	at metabase.request.session$do_with_current_user$do_with_user_local_values__82776.invoke(session.clj:56)
+	at metabase.request.session$do_with_current_user.invokeStatic(session.clj:57)
+	at metabase.request.session$do_with_current_user.invoke(session.clj:38)
+	at metabase.server.middleware.session$bind_current_user$fn__131999.invoke(session.clj:271)
+	at metabase.server.middleware.session$wrap_current_user_info$fn__131995.invoke(session.clj:247)
+	at metabase.server.middleware.settings_cache$wrap_settings_cache_check$fn__129609.invoke(settings_cache.clj:50)
+	at metabase.analytics.sdk$embedding_mw$embedding_mw_fn__59791.invoke(sdk.clj:69)
+	at metabase.server.middleware.session$wrap_session_key$fn__131940.invoke(session.clj:90)
+	at metabase.server.middleware.auth$wrap_static_api_key$fn__126592.invoke(auth.clj:17)
+	at ring.middleware.cookies$wrap_cookies$fn__132213.invoke(cookies.clj:200)
+	at metabase.server.middleware.misc$add_version$fn__110083.invoke(misc.clj:29)
+	at metabase.server.middleware.misc$add_content_type$fn__110091.invoke(misc.clj:47)
+	at metabase.server.middleware.misc$disable_streaming_buffering$fn__110128.invoke(misc.clj:94)
+	at ring.middleware.gzip$wrap_gzip$fn__132255.invoke(gzip.clj:86)
+	at metabase.server.middleware.request_id$wrap_request_id$fn__103899.invoke(request_id.clj:10)
+	at metabase.server.middleware.misc$bind_request$fn__110131$fn__110132.invoke(misc.clj:106)
+	at metabase.request.current$do_with_current_request.invokeStatic(current.clj:19)
+	at metabase.request.current$do_with_current_request.invoke(current.clj:15)
+	at metabase.server.middleware.misc$bind_request$fn__110131.invoke(misc.clj:105)
+	at metabase.server.middleware.ssl$redirect_to_https_middleware$fn__132042.invoke(ssl.clj:42)
+	at metabase.server.instance$async_proxy_handler$fn__126150.invoke(instance.clj:82)
+	at metabase.server.instance.proxy$org.eclipse.jetty.ee9.servlet.ServletHandler$ff19274a.doHandle(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.handle(ScopedHandler.java:125)
+	at metabase.server.statistics_handler$new_handler$fn__100300.invoke(statistics_handler.clj:105)
+	at metabase.server.statistics_handler.proxy$org.eclipse.jetty.ee9.nested.HandlerWrapper$ff19274a.handle(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.HandlerWrapper.handle(HandlerWrapper.java:124)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextHandle(ScopedHandler.java:195)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.doHandle(ContextHandler.java:1041)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextScope(ScopedHandler.java:162)
+	at org.eclipse.jetty.ee9.servlet.ServletHandler.doScope(ServletHandler.java:483)
+	at metabase.server.instance.proxy$org.eclipse.jetty.ee9.servlet.ServletHandler$ff19274a.doScope(Unknown Source)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.nextScope(ScopedHandler.java:160)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.doScope(ContextHandler.java:962)
+	at org.eclipse.jetty.ee9.nested.ScopedHandler.handle(ScopedHandler.java:123)
+	at org.eclipse.jetty.ee9.nested.ContextHandler.handle(ContextHandler.java:1723)
+	at org.eclipse.jetty.ee9.nested.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1581)
+	at org.eclipse.jetty.ee9.nested.HttpChannel.dispatch(HttpChannel.java:733)
+	at org.eclipse.jetty.ee9.nested.HttpChannel.handle(HttpChannel.java:520)
+	at org.eclipse.jetty.ee9.nested.ContextHandler$CoreContextHandler$CoreToNestedHandler.handle(ContextHandler.java:3048)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1220)
+	at org.eclipse.jetty.server.Server.handle(Server.java:195)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:680)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:411)
+	at org.eclipse.jetty.server.internal.HttpConnection$FillableCallback.succeeded(HttpConnection.java:1809)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:54)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:312)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:1009)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1239)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1194)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: clojure.lang.ExceptionInfo: Password did not match stored password.
+	at metabase.session.api$login.invokeStatic(api.clj:99)
+	at metabase.session.api$login.invoke(api.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$do_login__125557.invoke(api.clj:132)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560$fn__125561$fn__125562.invoke(api.clj:140)
+	at throttle.core$do_with_throttling.invokeStatic(core.clj:93)
+	at throttle.core$do_with_throttling.invoke(core.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560$fn__125561.invoke(api.clj:138)
+	at throttle.core$do_with_throttling.invokeStatic(core.clj:93)
+	at throttle.core$do_with_throttling.invoke(core.clj:87)
+	at metabase.session.api$fn__125549$fn__125555$fn__125560.invoke(api.clj:138)
+	at metabase.session.api$do_http_401_on_error.invokeStatic(api.clj:105)
+	... 130 more
+2026-02-28 08:43:24,010 DEBUG middleware.log :: [31mPOST /api/session 401 114ms (2 DB calls) {:metabase-user-id nil} 
+{:errors
+ {:password
+  #metabase.util.i18n.UserLocalizedString{:format-string "did not match stored password",
+                                          :args [],
+                                          :pluralization-opts {}}}}
+[0m 
+2026-02-28 08:43:41,836 DEBUG middleware.log :: [32mPOST /api/session 200 258ms (26 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 
+2026-02-28 08:43:41,960 DEBUG middleware.log :: [32mGET /api/session/properties 200 93ms (13 DB calls) App DB connections: 1/13 Jetty threads: 6/50 (5 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,021 DEBUG middleware.log :: [32mGET /api/user/current 200 153ms (12 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,081 DEBUG middleware.log :: [32mGET /api/database 200 26ms (2 DB calls) App DB connections: 1/13 Jetty threads: 6/50 (5 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,167 DEBUG middleware.log :: [32mGET /api/search 200 115ms (7 DB calls) App DB connections: 2/13 Jetty threads: 10/50 (1 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,183 DEBUG middleware.log :: [32mGET /api/bookmark 200 24ms (1 DB calls) App DB connections: 3/13 Jetty threads: 10/50 (1 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,207 DEBUG middleware.log :: [32mGET /api/collection/trash 200 48ms (3 DB calls) App DB connections: 2/13 Jetty threads: 9/50 (2 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,212 DEBUG middleware.log :: [32mGET /api/collection/tree 200 53ms (6 DB calls) App DB connections: 1/13 Jetty threads: 9/50 (2 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,212 DEBUG middleware.log :: [32mGET /api/collection/root 200 47ms (3 DB calls) App DB connections: 1/13 Jetty threads: 9/50 (2 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,218 DEBUG middleware.log :: [32mGET /api/activity/recents 200 53ms (2 DB calls) App DB connections: 0/13 Jetty threads: 6/50 (3 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,262 DEBUG middleware.log :: [32mGET /api/activity/popular_items 200 78ms (2 DB calls) App DB connections: 0/13 Jetty threads: 6/50 (4 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,341 DEBUG middleware.log :: [32mGET /api/setting/version-info 204 2ms (0 DB calls) App DB connections: 0/13 Jetty threads: 7/50 (4 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,362 DEBUG middleware.log :: [32mGET /api/database 200 23ms (2 DB calls) App DB connections: 0/13 Jetty threads: 6/50 (4 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:42,611 DEBUG middleware.log :: [32mGET /api/automagic-dashboards/database/2/candidates 200 377ms (2 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (4 idle, 0 queued) (46 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:48,717 DEBUG middleware.log :: [32mGET /api/database/2/schemas 200 38ms (2 DB calls) App DB connections: 1/13 Jetty threads: 5/50 (2 idle, 0 queued) (48 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:48,783 DEBUG middleware.log :: [32mGET /api/database/2/schema/public 200 24ms (2 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (2 idle, 0 queued) (48 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:49,949 DEBUG middleware.log :: [32mGET /api/database/2 200 9ms (1 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (2 idle, 0 queued) (48 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:43:57,469 DEBUG middleware.log :: [32mGET /api/database/2/metadata 200 258ms (7 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (2 idle, 0 queued) (48 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:51,578 DEBUG middleware.log :: [32mGET /api/timeline 200 14ms (1 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (7 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:51,796 DEBUG middleware.log :: [32mGET /api/native-query-snippet 200 18ms (1 DB calls) App DB connections: 2/13 Jetty threads: 7/50 (3 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:51,815 DEBUG middleware.log :: [32mGET /api/search 200 36ms (5 DB calls) App DB connections: 1/13 Jetty threads: 6/50 (4 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:51,823 DEBUG middleware.log :: [32mGET /api/collection 200 45ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:52,305 DEBUG middleware.log :: [32mGET /api/database 200 204ms (11 DB calls) App DB connections: 1/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:55,226 DEBUG middleware.log :: [32mPOST /api/dataset/query_metadata 200 18ms (2 DB calls) App DB connections: 1/13 Jetty threads: 6/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:55,268 DEBUG middleware.log :: [32mPUT /api/setting/last-used-native-database-id 204 60ms (10 DB calls) App DB connections: 1/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:55,420 DEBUG middleware.log :: [32mGET /api/session/properties 200 76ms (14 DB calls) App DB connections: 1/13 Jetty threads: 6/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:55,647 DEBUG middleware.log :: [32mGET /api/search 200 342ms (130 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:58,930 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 34ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:44:59,318 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 15ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:00,443 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 10ms (3 DB calls) App DB connections: 1/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:01,601 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 14ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:07,296 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 19ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:08,188 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 12ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (5 idle, 0 queued) (45 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:12,605 DEBUG middleware.log :: [32mPOST /api/dataset 202 [ASYNC: completed] 216ms (1 DB calls) App DB connections: 1/13 Jetty threads: 4/50 (5 idle, 0 queued) (58 total active threads) Queries in flight: 1 (0 queued); postgres DB 2 connections: 0/0 (0 threads blocked) {:metabase-user-id 1}[0m 
+2026-02-28 08:45:16,892 DEBUG middleware.log :: [32mGET /api/database/2/autocomplete_suggestions 200 18ms (4 DB calls) App DB connections: 0/13 Jetty threads: 5/50 (4 idle, 0 queued) (57 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id 1}[0m 
