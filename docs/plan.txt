@@ -23,5 +23,73 @@ generate token for it with some ttl and limits
 submit forms with that [may be front end]
 
 
+day 3 
+
+// created forms with schema
+
+day 4 
+
+//create what api end points user will need
+
+getuserdata
+
+updateuser data 
+
+black or white preference
+
+# User CRUD
+POST    /api/users
+GET     /api/users
+GET     /api/users/:id
+PUT     /api/users/:id
+PATCH   /api/users/:id
+DELETE  /api/users/:id
+
+# User Profile
+GET     /api/users/me
+PATCH   /api/users/me
+PATCH   /api/users/change-password
 
 
+done with api Endpoints
+
+day 5 integrate dynamo db serverless + user management db
+will use dynamo for forms 
+will use user convex for user management 
+will use clerk for auth 
+
+this works
+
+
+day 6
+
+assume user is authenticated 
+
+
+[lets now do some real stuff]
+
+lets test every function of form
+
+which data base to use for now?
+
+convex .. or will you deploy your own db?
+naah to expensive 
+cons
+0.5 mb storage and no backup
+so need to go for $25 dollor plan 
+2500 inr just for db 12*2500 = 30000 inr per year
+math is not mathing 
+
+need something else
+
+supabase currently its domain is banned [can still use it for testing yeah] lets do it 
+later on i will think about deploying in personal vps if things works
+for now lets to supabase only
+yeah that works
+
+
+postgresql ?? yeah it will work
+lets use local sql for now 
+why?
+easy of development and faster then using supabase 
+[can see data in tabular form]

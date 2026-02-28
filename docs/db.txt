@@ -1,30 +1,91 @@
+// schema.prisma
 
-// So I schema is given by supabase as default
-containing
-gmail uuid hasded password name created etc
+generator client {
+  provider = "prisma-client-js"
+}
 
-// create a user table in primsa
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
-user id
-name
-email
-created_at
-updated_at
-subscription_status
-subscription_plan
-subscription_end_date
+model User {
+  id                          Int                  @id @default(autoincrement())
+  name                        String
+  email                       String               @unique
+  created_at                  DateTime             @default(now())
+  updated_at                  DateTime             @updatedAt
+  scheduled_for_deletion_at   DateTime?
 
-// forms we are not storing here
-// we will just store the form id and it will be store in dynamo db or mongo db
-user id 1 to many relation with user table
-form_id
-created_at
-updated_at
-total_forms
-limit
-context_limit
-expiry 
+  forms                       Form[]
+  subscriptions               UserSubscription[]
 
+  @@map("users")
+}
 
+model Plan {
+  id                        Int                  @id @default(autoincrement())
+  name                      String               @unique
+  message_limit             Int
+  message_size_limit_bytes  Int
+  is_active                 Boolean              @default(true)
+  created_at                DateTime             @default(now())
 
+  subscriptions             UserSubscription[]
 
+  @@map("plans")
+}
+
+model UserSubscription {
+  id         Int       @id @default(autoincrement())
+  user_id    Int
+  plan_id    Int
+  start_date DateTime
+  end_date   DateTime?
+  is_active  Boolean   @default(true)
+  created_at DateTime  @default(now())
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  plan Plan @relation(fields: [plan_id], references: [id])
+
+  @@map("user_subscriptions")
+}
+
+model Form {
+  id                        Int          @id @default(autoincrement())
+  user_id                   Int
+  name                      String
+  description               String?
+  max_submissions_total     Int?
+  submission_limit_per_user Int?
+  fields_schema             Json
+  config_context            Json?
+  ttl_interval              String?      // PostgreSQL INTERVAL handled as string in Prisma
+  is_active                 Boolean      @default(true)
+  created_at                DateTime     @default(now())
+  updated_at                DateTime     @updatedAt
+
+ " user        User"             @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  submissions FormSubmission[]
+
+  @@map("forms")
+}
+
+model FormSubmission {
+  id            Int      @id @default(autoincrement())
+  form_id       Int
+  chat_id       String?
+  response_data Json
+  status        SubmissionStatus
+  created_at    DateTime @default(now())
+
+  form Form @relation(fields: [form_id], references: [id], onDelete: Cascade)
+
+  @@map("form_submissions")
+}
+
+enum SubmissionStatus {
+  SUBMITTED
+  DRAFT
+  ERROR
+}
