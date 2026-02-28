@@ -1,0 +1,24 @@
+# API Endpoints
+
+## Auth / User
+- `POST /auth/register` - Register a new user
+- `POST /auth/login` - Login and get JWT token
+- `GET /user/profile` - Get current user profile (guarded)
+- `PATCH /user/profile` - Update user profile (name, etc.)
+- `DELETE /user/profile` - Schedule user for deletion
+
+## Plans & Subscriptions
+- `GET /plans` - List available plans
+- `POST /subscriptions` - Create a subscription for the authenticated user
+
+## Forms
+- `POST /form` - Create a new form
+- `GET /form` - List forms created by the user
+- `GET /form/:id` - Get details of a specific form (with schema)
+- `PATCH /form/:id` - Update form description, config, active status
+- `DELETE /form/:id` - Delete a form
+
+## Form Submissions
+- `POST /form/:id/submit` - Public endpoint to submit a form response
+- `GET /form/:id/submissions` - Get all submissions for a specific form (form owner only)
+- `GET /form/submission/:subId` - Get a specific submission details

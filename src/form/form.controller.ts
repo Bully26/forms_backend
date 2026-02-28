@@ -1,83 +1,60 @@
-import { Controller } from '@nestjs/common';
-import { FormService } from './form.service';
-
-/*
-functional requirement 
-
-options
-
-create form with limits 
-  get auth token integrate it by himself 
-  get url link for form which he can use
-
-delete form
-
-
-update form limits
- upgrade summission limit etc 
-
-
-get info about some form with id x
-
-
-get all forms 
-
-
-
-*/
-
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { CreateFormDto } from './dto/create-form.dto';
+import { UpdateFormDto } from './dto/update-form.dto';
+import { SubmitFormDto } from './dto/submit-form.dto';
 
 @Controller('form')
 export class FormController {
- constructor (private readonly formService: FormService){}
- 
- @Post('/submit')
- async createform()
- {
-   // create form with limits
-   await this.formService.createform()
- }
+  @Post()
+  create(@Body() createFormDto: CreateFormDto) {
+    return { message: 'Create a new form', data: createFormDto };
+  }
 
- @Get('/csv')
- async getformcsv()
- {
-   // get form from db with this user id
-   await this.formService.getformcsv()
- }
+  @Get()
+  findAll() {
+    return { message: 'List forms created by the user' };
+  }
 
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return { message: `Get details of a specific form ${id} (with schema)` };
+  }
 
- @Get('/token')
- async getformtoken()
- {
-   // get form from db with this user id
-   await this.formService.getformtoken()
- }
- 
- @Get('/url ')
- async getformurl()
- {
-   // get form from db with this user id
-   await this.formService.getformurl()
- }
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateFormDto: UpdateFormDto) {
+    return { message: `Update form ${id}`, data: updateFormDto };
+  }
 
- @Get('/all')
- async getallforms()
- {
-   // get all forms from db with this user id
-   await this.formService.getallforms()
- }
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return { message: `Delete a form ${id}` };
+  }
 
- @Delete('/delete')
- async deleteform()
- {
-   // delete form from db with this user id
-   await this.formService.deleteform()
- }
+  @Post(':id/submit')
+  submit(@Param('id') id: string, @Body() submitFormDto: SubmitFormDto) {
+    return {
+      message: `Public endpoint to submit a form response for form ${id}`,
+      data: submitFormDto,
+    };
+  }
 
- @Put('/update')
- async updateform()
- {
-   // update form from db with this user id
-   await this.formService.updateform()
- }
+  @Get(':id/submissions')
+  getSubmissions(@Param('id') id: string) {
+    return {
+      message: `Get all submissions for specific form ${id} (owner only)`,
+    };
+  }
+
+  @Get('submission/:subId')
+  getSubmissionDetails(@Param('subId') subId: string) {
+    return { message: `Get a specific submission details for subId ${subId}` };
+  }
 }
