@@ -5,6 +5,8 @@ import {
   Body,
   Patch,
   Delete,
+  Param,
+  ParseIntPipe
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -19,9 +21,11 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
-  @Get('profile')
-  getProfile() {
-    return this.userService.getProfile();
+  @Get('profile/:id')
+  getProfile(@Param('id', ParseIntPipe) id: number) {
+    // get it from auth token ok
+
+    return this.userService.getProfile(id);
   }
 
   @Patch('profile')
@@ -29,8 +33,8 @@ export class UserController {
     return this.userService.updateProfile(updateUserDto);
   }
 
-  @Delete('profile')
-  deleteProfile() {
-    return this.userService.deleteProfile();
+  @Delete('profile/:id')
+  deleteProfile(@Param('id', ParseIntPipe) id: number) {
+    return this.userService.deleteProfile(id);
   }
 }

@@ -7,9 +7,10 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { PlanModule } from './plan/plan.module';
 import { SubscriptionModule } from './subscription/subscription.module';
+import { FeedbackModule } from './feedback/feedback.module';
 
 @Module({
-  imports: [UserModule, AuthModule, PlanModule, SubscriptionModule],
+  imports: [UserModule, AuthModule, PlanModule, SubscriptionModule, FeedbackModule],
   controllers: [AppController, FormController],
   providers: [AppService, FormService],
 })
