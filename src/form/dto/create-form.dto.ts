@@ -1,10 +1,12 @@
-import { IsString, IsOptional, IsInt, IsBoolean, IsObject } from 'class-validator';
+import { IsString, IsOptional, IsInt, IsBoolean, IsObject, IsNotEmpty, IsArray } from 'class-validator';
 
 export class CreateFormDto {
   @IsInt()
+  @IsNotEmpty()
   user_id: number;
 
   @IsString()
+  @IsNotEmpty()
   name: string;
 
   @IsString()
@@ -19,8 +21,14 @@ export class CreateFormDto {
   @IsOptional()
   submission_limit_per_user?: number;
 
-  @IsObject()
-  fields_schema: any;
+  @IsBoolean()
+  @IsOptional()
+  validate?: boolean;
+
+  @IsArray()
+  @IsString({ each: true })
+  @IsNotEmpty()
+  fields_schema: string[];
 
   @IsObject()
   @IsOptional()

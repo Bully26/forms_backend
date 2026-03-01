@@ -8,6 +8,14 @@ import { prisma } from '../prisma';
 export class FormService {
   async create(createFormDto: CreateFormDto) {
     try {
+      // also check if user id exist or not 
+      const userExists = await prisma.user.findUnique({
+        where: { id: createFormDto.user_id },
+      });
+      if (!userExists) {
+        throw new NotFoundException(`User with ID ${createFormDto.user_id} not found`);
+      }
+
       const form = await prisma.form.create({
         data: {
           user_id: createFormDto.user_id,
@@ -15,6 +23,7 @@ export class FormService {
           description: createFormDto.description,
           max_submissions_total: createFormDto.max_submissions_total,
           submission_limit_per_user: createFormDto.submission_limit_per_user,
+          validate: createFormDto.validate ?? false,
           fields_schema: createFormDto.fields_schema,
           config_context: createFormDto.config_context,
           ttl_interval: createFormDto.ttl_interval,
@@ -28,9 +37,12 @@ export class FormService {
     }
   }
 
-  async findAll() {
+  async findAll(limit: number = 10, offset: number = 0) {
     try {
-      const forms = await prisma.form.findMany();
+      const forms = await prisma.form.findMany({
+        take: limit,
+        skip: offset,
+      });
       return { message: 'Forms retrieved successfully', data: forms };
     } catch (error) {
       console.error('Error retrieving forms:', error);

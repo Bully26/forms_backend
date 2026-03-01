@@ -61,7 +61,8 @@ model Form {
   description               String?
   max_submissions_total     Int?
   submission_limit_per_user Int?
-  fields_schema             Json
+  validate                  Boolean @default(false)
+  fields_schema             String[]
   config_context            Json?
   ttl_interval              String? // PostgreSQL INTERVAL handled as string in Prisma
   is_active                 Boolean  @default(true)

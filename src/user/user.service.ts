@@ -64,7 +64,7 @@ export class UserService {
     }
     catch (error) {
       console.log("Error during updating user profile");
-      return error;
+      return { message: "Error during update" };
     }
   }
 

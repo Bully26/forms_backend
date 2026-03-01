@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { FormService } from './form.service';
 import { CreateFormDto } from './dto/create-form.dto';
@@ -22,8 +23,11 @@ export class FormController {
   }
 
   @Get()
-  findAll() {
-    return this.formService.findAll();
+  findAll(@Query('limit') limit?: string, @Query('offset') offset?: string) {
+    // need some kind of limits here
+    const parsedLimit = limit ? parseInt(limit, 10) : 10;
+    const parsedOffset = offset ? parseInt(offset, 10) : 0;
+    return this.formService.findAll(parsedLimit, parsedOffset);
   }
 
   @Get(':id')

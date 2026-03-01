@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsInt, IsBoolean, IsObject } from 'class-validator';
+import { IsString, IsOptional, IsInt, IsBoolean, IsObject, IsArray } from 'class-validator';
 
 export class UpdateFormDto {
   @IsString()
@@ -17,9 +17,14 @@ export class UpdateFormDto {
   @IsOptional()
   submission_limit_per_user?: number;
 
-  @IsObject()
+  @IsBoolean()
   @IsOptional()
-  fields_schema?: any;
+  validate?: boolean;
+
+  @IsArray()
+  @IsString({ each: true })
+  @IsOptional()
+  fields_schema?: string[];
 
   @IsObject()
   @IsOptional()
